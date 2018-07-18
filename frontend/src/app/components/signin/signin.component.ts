@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, GoogleLoginProvider } from 'angular5-social-login';
+import { AuthService, GoogleLoginProvider, LinkedinLoginProvider } from 'angular5-social-login';
 import { SharedService } from '../../services/shared.service';
 
 @Component({
@@ -25,6 +25,17 @@ export class SigninComponent implements OnInit {
       );
 
   }
+
+  public linkedinSignIn() {
+
+    this.socialAuthService.signIn(LinkedinLoginProvider.PROVIDER_ID).then(
+      (userData) => {
+        console.log('linkedin sign in data : ' , userData);
+        this.share.email = userData.email;
+      }
+    );
+
+}
 
   ngOnInit() {
   }

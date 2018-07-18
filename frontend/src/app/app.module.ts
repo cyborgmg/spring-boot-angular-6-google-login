@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'angular5-social-login';
+import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider, LinkedinLoginProvider } from 'angular5-social-login';
 import { SigninComponent } from './components/signin/signin.component';
 import { SharedService } from './services/shared.service';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,10 @@ export function getAuthServiceConfigs() {
           id: GoogleLoginProvider.PROVIDER_ID,
           provider: new GoogleLoginProvider('718205503735-ai0taaon8vj3qm04940fuk9o8h65afqe.apps.googleusercontent.com')
         },
+        {
+          id: LinkedinLoginProvider.PROVIDER_ID,
+          provider: new LinkedinLoginProvider('0pfIadYrCKY9XaF5')
+        }
       ]
   );
   return config;
