@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'angular5-social-login';
 import { SigninComponent } from './components/signin/signin.component';
+import { SharedService } from './services/shared.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 export function getAuthServiceConfigs() {
   const config = new AuthServiceConfig(
@@ -23,9 +26,12 @@ export function getAuthServiceConfigs() {
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     SocialLoginModule
   ],
   providers: [
+    SharedService,
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
