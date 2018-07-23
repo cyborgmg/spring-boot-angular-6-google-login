@@ -7,7 +7,7 @@ export class SharedService {
 
   public static instance: SharedService = null;
 
-  email: string;
+  public loggedIn: boolean;
 
   constructor() {
 
